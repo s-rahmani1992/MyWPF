@@ -34,13 +34,11 @@ SpriteSheet::SpriteSheet(std::wstring fileName, GPU2D* gpu):gpuRender(gpu), bitm
 	frame->Release();
 }
 
-SpriteSheet::~SpriteSheet()
-{
+SpriteSheet::~SpriteSheet(){
 	bitmap->Release();
 }
 
-void SpriteSheet::Draw()
-{
+void SpriteSheet::Draw(){
 	gpuRender->GetRenderTarget()->DrawBitmap(bitmap
 		, D2D1::RectF(0.0f, 0.0f, bitmap->GetSize().width, bitmap->GetSize().height), 1.0f
 		, D2D1_BITMAP_INTERPOLATION_MODE::D2D1_BITMAP_INTERPOLATION_MODE_NEAREST_NEIGHBOR
